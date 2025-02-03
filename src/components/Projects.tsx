@@ -3,7 +3,7 @@ import ProjectCard from "./ProjectCard";
 export default function Projects() {
   return (
     <section className="flex overflow-hidden relative flex-col items-start w-full min-h-[421px] max-md:max-w-full">
-      <div className="z-0 self-stretch w-full min-h-0 border-solid border-[3px] border-zinc-100 max-md:max-w-full" />
+      <div className="z-0 self-stretch w-full min-h-0 border-solid border-[2px] border-zinc-100 max-md:max-w-full" />
       <h2 className="absolute left-2/4 z-0 h-11 text-3xl -translate-x-2/4 top-[26px] translate-y-[0%] w-[129px]">
         Projects
       </h2>
