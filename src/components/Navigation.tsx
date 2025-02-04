@@ -5,9 +5,9 @@ import Image from "next/image";
 import { useState } from "react";
 import { IoMdMenu } from "react-icons/io";
 
-export type ViewOptions = "Projects" | "Experience" | "Skills" | "Education";
+export type ViewOptions = "Projects" | "Experience" | "Education";
 
-const viewOptions: ViewOptions[] = ["Projects", "Experience", "Skills", "Education"];
+const viewOptions: ViewOptions[] = ["Projects", "Experience", "Education"];
 
 export default function Navigation() {
   const { currentView, changeViewContext } = useViewcontext();

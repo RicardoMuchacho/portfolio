@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Projects from "./Projects";
 import Experience from "./Experience";
 import { useViewcontext } from "@/hooks/useContext";
+import Education from "./Education";
 
 export default function SelectedView() {
   const { currentView } = useViewcontext();
@@ -27,6 +28,7 @@ export default function SelectedView() {
     >
       {view === "Projects" && <Projects />}
       {view === "Experience" && <Experience />}
+      {view === "Education" && <Education />}
     </section>
   );
 }

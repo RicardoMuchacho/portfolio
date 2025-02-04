@@ -1,11 +1,17 @@
 import Image from "next/image";
-import { Project } from "../Projects";
 import Link from "next/link";
 
-export default function ProjectCard({ title, description, url, src }: Project) {
+export interface IContentCard {
+  title: string;
+  description: string;
+  url?: string;
+  src: string;
+}
+
+export default function ContentCard({ title, description, url, src }: IContentCard) {
   return (
     <article className="flex flex-col h-full border border-gray-100 rounded-md shadow-lg">
-      <Link href={url || "#"} target="_blank" rel="noopener noreferrer">
+      <Link href={url || "#"} target={url ? "_blank" : ""} rel="noopener noreferrer">
         <Image
           src={src}
           alt={title}

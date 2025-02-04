@@ -1,13 +1,6 @@
-import ProjectCard from "./ui/ProjectCard";
+import ContentCard, { IContentCard } from "./ui/ContentCard";
 
-export interface Project {
-  title: string;
-  description: string;
-  url: string;
-  src: string;
-}
-
-const projects: Project[] = [
+const projects: IContentCard[] = [
   {
     title: "Restaurantly App",
     description: "Google Api recommendations based on text string",
@@ -32,7 +25,7 @@ export default function Projects() {
   return (
     <div className="flex flex-col gap-10 justify-center items-center w-full sm:flex-row">
       {projects.map((project) => (
-        <ProjectCard
+        <ContentCard
           key={project.title}
           title={project.title}
           description={project.description}
