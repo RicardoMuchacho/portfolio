@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="flex flex-col md:flex-row mt-16 gap-10 items-center justify-center py-24 px-5 md:px-20 w-full text-base bg-[url('/bgPoly.png')] bg-no-repeat bg-cover">
+    <section className="flex flex-col mt-16 gap-2 items-center justify-center py-24 px-5 w-full text-base bg-[url('/bgPoly.png')] bg-no-repeat bg-cover sm:flex-row sm:gap-10 sm:px-20 sm:py-24">
       {/* Profile Image */}
       <Image
         src="/profileImg.png"
@@ -12,20 +12,23 @@ export default function Hero() {
         className="object-contain shadow-lg rounded-full"
       />
 
-      {/* Message Container (Now Responsive) */}
       <div className="relative flex items-center w-full max-w-[90%] md:max-w-[650px]">
-        {/* Message Bubble Image (Now Scales with Text) */}
         <Image
           src="/message.svg"
-          alt="Message background"
+          alt="Message image"
           width={700}
           height={300}
-          className="absolute w-full h-auto max-w-full drop-shadow-lg"
+          className="absolute w-full h-auto max-w-full drop-shadow-lg sm:hidden"
         />
-
-        {/* Text Content */}
-        <div className="relative flex flex-col px-8 md:px-16 py-8 w-full max-w-full">
-          <h1 className="text-lg text-black mb-4 sm:text-4xl">
+        <Image
+          src="/messageMobile.svg"
+          alt="Message image mobile"
+          width={300}
+          height={180}
+          className="object-cover absolute w-full h-[180px] max-w-full drop-shadow-lg"
+        />
+        <div className="relative mt-4 flex flex-col px-8 md:px-16 py-8 w-full max-w-full sm:mt-0">
+          <h1 className="text-lg font-bold mb-2 text-center sm:text-4xl sm:mb-4 sm:text-start">
             Hello! I'm Ricardo
           </h1>
           <p className="text-sm text-black sm:text-lg">
