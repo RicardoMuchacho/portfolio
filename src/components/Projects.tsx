@@ -30,18 +30,16 @@ const projects: Project[] = [
 
 export default function Projects() {
   return (
-    <section className="flex flex-col justify-center px-12 py-12 items-center">
-      <div className="flex flex-col gap-10 justify-center items-center w-full sm:flex-row">
-        {projects.map((project) => (
-          <ProjectCard
-            key={project.title}
-            title={project.title}
-            description={project.description}
-            src={project.src}
-            url={project.url}
-          />
-        ))}
-      </div>
-    </section>
+    <div className="flex flex-col gap-10 justify-center items-center w-full sm:flex-row">
+      {projects.map((project) => (
+        <ProjectCard
+          key={project.title}
+          title={project.title}
+          description={project.description}
+          src={project.src}
+          url={project.url}
+        />
+      ))}
+    </div>
   );
 }

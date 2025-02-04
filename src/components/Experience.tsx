@@ -12,13 +12,13 @@ const experiences: Experience[] = [
     title: "test",
     description: "test test",
     url: "https://github.com/stars/RicardoMuchacho/lists/web-app-projects",
-    src: "/githubBg.png"
+    src: "/githubBg.jpg"
   },
   {
     title: "test",
     description: "test test",
     url: "https://github.com/stars/RicardoMuchacho/lists/web-app-projects",
-    src: "/githubBg.png"
+    src: "/githubBg.jpg"
   },
   {
     title: "University Projects",
@@ -30,18 +30,16 @@ const experiences: Experience[] = [
 
 export default function Experience() {
   return (
-    <section className="flex flex-col justify-center px-12 py-12 items-center">
-      <div className="flex flex-col gap-10 justify-center items-center w-full sm:flex-row sm">
-        {experiences.map((exp) => (
-          <ProjectCard
-            key={exp.title}
-            title={exp.title}
-            description={exp.description}
-            src={exp.src}
-            url={exp.url}
-          />
-        ))}
-      </div>
-    </section>
+    <div className="flex flex-col gap-10 justify-center items-center w-full sm:flex-row sm">
+      {experiences.map((exp) => (
+        <ProjectCard
+          key={exp.title}
+          title={exp.title}
+          description={exp.description}
+          src={exp.src}
+          url={exp.url}
+        />
+      ))}
+    </div>
   );
 }

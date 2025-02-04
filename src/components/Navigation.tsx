@@ -1,5 +1,6 @@
 "use client";
 
+import { useViewcontext } from "@/hooks/useContext";
 import Image from "next/image";
 import { useState } from "react";
 import { IoMdMenu } from "react-icons/io";
@@ -9,21 +10,25 @@ export type ViewOptions = "Projects" | "Experience" | "Skills" | "Education";
 const viewOptions: ViewOptions[] = ["Projects", "Experience", "Skills", "Education"];
 
 export default function Navigation() {
+  const { currentView, changeViewContext } = useViewcontext();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleClick = (option: ViewOptions) => {
     setMenuOpen(false);
-    const section = document.getElementById(option.toLowerCase());
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
+    changeViewContext(option);
+    scrollToSection("selected-view");
   };
 
   const handleMenu = () => {
     setMenuOpen(!menuOpen);
   }
 
-  console.log("Navigation component re-rendered!");
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <nav className="fixed top-0 gap-10 z-50 justify-center items-center px-20 py-5 w-full text-md font-bold text-white bg-black min-h-[50px]">
@@ -40,7 +45,8 @@ export default function Navigation() {
             key={option}
             onClick={() => handleClick(option)}
             role="link"
-            className="hover:text-gray-300 transition-colors bg-transparent border-none cursor-pointer"
+            className={`hover:text-gray-300 transition-colors bg-transparent border-none cursor-pointer
+              ${currentView === option && "underline underline-offset-4"}`}
           >
             {option}
           </button>
