@@ -17,6 +17,7 @@ export default function SelectedView() {
         setIsTransitioning(false);
       }, 300);
     }
+    // eslint-disable-next-line
   }, [currentView]);
 
   return (
