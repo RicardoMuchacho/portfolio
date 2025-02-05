@@ -10,13 +10,13 @@ export interface IContentCard {
 
 export default function ContentCard({ title, description, url, src }: IContentCard) {
   return (
-    <article className="flex flex-col h-full border border-gray-100 rounded-md shadow-lg">
+    <article className="flex flex-col h-full w-full max-w-[400px] border border-gray-100 rounded-md shadow-lg">
       <Link href={url || "#"} target={url ? "_blank" : ""} rel="noopener noreferrer">
         <Image
           src={src}
           alt={title}
           width={350}
-          height={200}
+          height={250}
           className="object-cover size-full"
         />
       </Link>

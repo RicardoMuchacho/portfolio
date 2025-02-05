@@ -7,7 +7,7 @@ const githubUrl = "https://github.com/RicardoMuchacho"
 
 export default function Footer() {
   return (
-    <footer className="flex gap-4 justify-center items-center px-52 py-6 w-full text-xl bg-neutral-100 max-md:px-5 max-md:max-w-full md:justify-between md:gap-10">
+    <footer className="flex flex-col gap-4 justify-center items-center px-52 py-6 w-full text-xl bg-neutral-100 max-md:px-5 max-md:max-w-full md:justify-between md:gap-10 md:flex-row">
       <a
         href="mailto:email@gmail.com"
         className="text-lg hover:text-gray-600 transition-colors"

@@ -18,14 +18,14 @@ export default function Hero() {
           alt="Message image"
           width={700}
           height={300}
-          className="absolute w-full h-auto max-w-full drop-shadow-lg sm:hidden"
+          className="absolute w-full h-auto max-w-full drop-shadow-lg"
         />
         <Image
           src="/messageMobile.svg"
           alt="Message image mobile"
           width={300}
           height={180}
-          className="object-cover absolute w-full h-[180px] max-w-full drop-shadow-lg"
+          className="object-cover absolute w-full h-[180px] max-w-full drop-shadow-lg sm:hidden"
         />
         <div className="relative mt-4 flex flex-col px-8 md:px-16 py-8 w-full max-w-full sm:mt-0">
           <h1 className="text-lg font-bold mb-2 text-center sm:text-4xl sm:mb-4 sm:text-start">
