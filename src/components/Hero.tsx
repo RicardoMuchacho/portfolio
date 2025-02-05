@@ -29,7 +29,6 @@ export default function Hero() {
         />
         <div className="relative mt-4 flex flex-col px-8 md:px-16 py-8 w-full max-w-full sm:mt-0">
           <h1 className="text-lg font-bold mb-2 text-center sm:text-4xl sm:mb-4 sm:text-start">
-            {/* eslint-disable-next-line */}
             Hello! I'm Ricardo
           </h1>
           <p className="text-sm text-black sm:text-lg">
