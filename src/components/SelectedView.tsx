@@ -22,9 +22,9 @@ export default function SelectedView() {
   return (
     <section
       id="selected-view"
-      className={`flex flex-col justify-center px-12 py-12 items-center 
+      className={`flex flex-col justify-center h-[440px] px-12 py-12 items-center 
       transition-opacity duration-500 ease-in-out 
-      ${isTransitioning ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"}`}
+      ${isTransitioning ? "opacity-0" : "opacity-100"}`}
     >
       {view === "Projects" && <Projects />}
       {view === "Experience" && <Experience />}
