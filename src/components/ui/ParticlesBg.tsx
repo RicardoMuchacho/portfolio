@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import type { Container, Engine } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
@@ -41,7 +41,7 @@ const ParticlesBg = () => {
                   enable: true,
                   mode: "repulse",
                 },
-                resize: true,
+                // resize: true,
               },
               modes: {
                 push: {
@@ -60,7 +60,7 @@ const ParticlesBg = () => {
               },
               number: {
                 value: isMobile ? 10 : 20,
-                max: 30
+                // max: 30
               },
               opacity: {
                 value: 1
