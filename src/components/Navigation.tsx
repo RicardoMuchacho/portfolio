@@ -44,6 +44,7 @@ export default function Navigation() {
       <div className="flex-col hidden justify-center gap-2 text-center sm:flex-row sm:gap-10 sm:flex">
         {viewOptions.map((option) => (
           <Link
+            key={option}
             href={`#${option.toLocaleLowerCase()}`}
             onClick={(e) => handleClick(option, e)}
             className={`hover:text-gray-300 transition-colors bg-transparent border-none cursor-pointer
