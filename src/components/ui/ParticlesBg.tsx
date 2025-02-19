@@ -18,7 +18,6 @@ const ParticlesBg = () => {
 
   return (
     init && (
-      // <div className="absolute top-0 left-0 right-0 h-[400px] -z-5">
       <div className="absolute top-0 left-0 right-0 h-full -z-5">
         <Particles
           id="tsparticles"
@@ -59,8 +58,8 @@ const ParticlesBg = () => {
                 speed: { min: 1, max: 6 }
               },
               number: {
-                value: isMobile ? 10 : 20,
-                // max: 30
+                value: isMobile ? 8 : 20,
+                limit: { value: isMobile ? 8 : 20, mode: "wait" },
               },
               opacity: {
                 value: 1

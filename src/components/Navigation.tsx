@@ -63,14 +63,15 @@ export default function Navigation() {
         {menuOpen && (
           viewOptions.map((option) => (
             <div key={option}>
-              <button
+              <Link
                 key={option}
+                href={`#${option.toLocaleLowerCase()}`}
                 onClick={(e) => handleClick(option, e)}
-                role="link"
-                className="hover:text-gray-300 transition-colors bg-transparent border-none cursor-pointer"
+                className={`hover:text-gray-300 transition-colors bg-transparent border-none cursor-pointer
+              ${currentView === option && "underline underline-offset-4"}`}
               >
                 {option}
-              </button>
+              </Link>
             </div>
           ))
         )}
