@@ -2,6 +2,7 @@
 
 import { useViewcontext } from "@/hooks/useContext";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { IoMdMenu } from "react-icons/io";
 
@@ -13,7 +14,8 @@ export default function Navigation() {
   const { currentView, changeViewContext } = useViewcontext();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleClick = (option: ViewOptions) => {
+  const handleClick = (option: ViewOptions, e: any) => {
+    e.preventDefault();
     setMenuOpen(false);
     changeViewContext(option);
     scrollToSection("selected-view");
@@ -41,15 +43,14 @@ export default function Navigation() {
       {/* Desktop Menu */}
       <div className="flex-col hidden justify-center gap-2 text-center sm:flex-row sm:gap-10 sm:flex">
         {viewOptions.map((option) => (
-          <button
-            key={option}
-            onClick={() => handleClick(option)}
-            role="link"
+          <Link
+            href={`#${option.toLocaleLowerCase()}`}
+            onClick={(e) => handleClick(option, e)}
             className={`hover:text-gray-300 transition-colors bg-transparent border-none cursor-pointer
               ${currentView === option && "underline underline-offset-4"}`}
           >
             {option}
-          </button>
+          </Link>
         ))}
       </div>
       {/* Mobile Menu */}
@@ -63,7 +64,7 @@ export default function Navigation() {
             <div key={option}>
               <button
                 key={option}
-                onClick={() => handleClick(option)}
+                onClick={(e) => handleClick(option, e)}
                 role="link"
                 className="hover:text-gray-300 transition-colors bg-transparent border-none cursor-pointer"
               >

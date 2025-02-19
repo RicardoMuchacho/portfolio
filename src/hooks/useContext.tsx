@@ -14,7 +14,5 @@ export function useViewcontext() {
     context?.setSelectedView(view)
   }
 
-  console.log(currentView)
-
   return { changeViewContext, currentView };
 }
